@@ -25,7 +25,7 @@ Install the Vim plugin using your preferred plugin manager:
 | ['runtimepath'](http://vimhelp.appspot.com/options.txt.html#%27runtimepath%27) handler | Command                                            |
 |------------------------------------------------------|--------------------------------------------------------------------------------------|
 | [Vim 8.0+ Native packages](http://vimhelp.appspot.com/repeat.txt.html#packages) | `$ git clone git://github.com/NateLehman/kustocli-vim ~/.vim/pack/plugins/start/kustocli-vim` |
-| [Pathogen](https://github.com/tpope/vim-pathogen)    | `$ git clone git://github.com/OmniSharp/omnisharp-vim ~/.vim/bundle/omnisharp-vim`     |
+| [Pathogen](https://github.com/tpope/vim-pathogen)    | `$ git clone git://github.com/NateLehman/kustocli-vim ~/.vim/bundle/kustocli-vim`     |
 
 If not using a plugin manager such as Vim-plug (which does this automatically), make sure your .vimrc contains these lines:
 
