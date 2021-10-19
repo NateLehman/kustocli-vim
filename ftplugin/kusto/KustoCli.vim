@@ -9,21 +9,30 @@ endif
 
 function! s:kustoquery(mods) abort
     try
-        let a_save = @a
+        let l:a_save = @a
         silent! normal! "ayip
-        let query_lines = split(@a, "\n")
-        let temp_query_file = tempname()
+        let l:query = split(@a, "\n")
+        let l:input_filename = tempname()
         try
-            call writefile(query_lines, temp_query_file)
-            silent let query_results = systemlist(g:KustoCli_executable_path . ' "' . g:KustoCli_cluster_conn_string . '" -focus:true -banner:false -lineMode:false -script:"' . temp_query_file . '"')
+            call writefile(l:query, l:input_filename)
+            let l:command = printf(
+                        \ '%s %s -focus:true -banner:false -lineMode:false -script:%s',
+                        \ g:KustoCli_executable_path,
+                        \ g:KustoCli_cluster_conn_string->shellescape(),
+                        \ l:input_filename->shellescape())
+            silent let l:results = systemlist(l:command)
+            if has('win32')
+                " remove trailing <CR> from cmd output
+                let l:results = l:results->map({_, val -> val[:-2]})
+            endif
             execute a:mods . ' new'
             setlocal nobuflisted buftype=nofile bufhidden=delete noswapfile nowrap
-            call setline(1, query_results[2:])
+            call setline(1, l:results[2:])
         finally
-            call delete(temp_query_file)
+            call delete(l:input_filename)
         endtry
     finally
-        let @a = a_save
+        let @a = l:a_save
     endtry
 endfunction
 
