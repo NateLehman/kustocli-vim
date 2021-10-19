@@ -1,7 +1,7 @@
 if get(b:, 'KustoCli_ftplugin_loaded', 0) | finish | endif
 let b:KustoCli_ftplugin_loaded = 1
 
-let g:KustoCli_cluster_conn_string = get(g:, 'KustoCli_cluster_conn_string', 'https://help.kusto.windows.net/Samples')
+let g:KustoCli_cluster_conn_string = get(g:, 'KustoCli_cluster_conn_string', 'https://help.kusto.windows.net/Samples;Fed=true')
 
 if !exists('g:KustoCli_executable_path')
     let g:KustoCli_executable_path = KustoCli#FindOrInstallLocalKustoCliExe()
