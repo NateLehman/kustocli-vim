@@ -8,7 +8,7 @@ $packageUrl = "https://www.nuget.org/api/v2/package/$($kustoToolsSearch.data[0].
 
 $scriptDir = Split-Path $MyInvocation.MyCommand.Path -Parent
 
-mkdir bin
+mkdir "$($scriptDir)\..\bin"
 $packageOut = "$($scriptDir)\..\bin\$($kustoToolsSearch.data[0].id).$($kustoToolsSearch.data[0].version).nupkg.zip"
 Invoke-WebRequest -Uri $packageUrl -OutFile $packageOut
 
