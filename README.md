@@ -1,6 +1,8 @@
 # kustocli-vim
 a kusto vim plugin
 
+![screenshot-of-kustocli-vim](https://github.com/NateLehman/kustocli-vim/blob/25fc1101732304cf8a5e069890bcbfc05408c228/media/kustocli-vim.example.png)
+
 ## Background
 The goal of this plugin is to provide a kusto query authoring experience native to VIM. This plugin does 2 distinct things so far
 
