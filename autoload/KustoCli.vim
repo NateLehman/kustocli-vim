@@ -12,7 +12,7 @@ endfunction
 function! KustoCli#Install(...) abort
     echo 'Installing Kusto.Cli, please wait...'
 
-    let l:logfile s:plugin_root_dir . '\installer\install.log'
+    let l:logfile = s:plugin_root_dir . '\installer\install.log'
     let l:script = shellescape(
                 \ s:plugin_root_dir . '\installer\kustotools-installer.ps1')
     let l:command = printf(
