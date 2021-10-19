@@ -55,7 +55,7 @@ The [connection string](https://docs.microsoft.com/en-us/azure/data-explorer/kus
 " add this to your .vimrc to point queries at your preferred kusto cluster
 :let g:KustoCli_cluster_conn_string = "<my-cluster-connection-string>"
 ```
-It is very important that you add this to your vimrc to access your desired cluster. By default, the connection string is set to the [_Samples_ database referenced by the kusto documentation](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/samples?pivots=azuredataexplorer), so you can test out the plugin by copy and pasting queries from the documentation.
+It is very important that you add this to your vimrc to access your desired cluster. By default, the connection string is set to the [_Samples_ database referenced by the kusto documentation](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/samples?pivots=azuredataexplorer), so you can test out the plugin by copy-pasting queries from the documentation.
 
 ### `Kusto.Cli.exe` Install location
 You may define a path to the [Kusto.Cli.exe](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/tools/kusto-cli) you have installed with:
